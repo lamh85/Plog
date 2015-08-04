@@ -11,6 +11,11 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Here is the DEFAULT root
+// Route::get('/', function () {
+//     return view('welcome');
+// });
+
+Route::get('/', 'MiscController@home');
+
+Route::get('/about', 'MiscController@about');
