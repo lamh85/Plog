@@ -18,9 +18,8 @@ class MiscController extends Controller
     public function home()
     {
         // Returns the 'home' file in the misc folder
-        return view('misc.home')
+        return view('misc.home');
     }
-
 
     /**
      * @param  Request  $request
@@ -30,7 +29,7 @@ class MiscController extends Controller
     public function about()
     {
         // Returns the 'about' file in the misc folder
-        return view('misc.about')
+        return view('misc.about');
     }
 
 }
