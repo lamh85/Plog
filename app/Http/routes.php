@@ -16,6 +16,12 @@
 //     return view('welcome');
 // });
 
+// Routes to Misc Controller
+
 Route::get('/', 'MiscController@home');
 
 Route::get('/about', 'MiscController@about');
+
+// Other Routes
+
+Route::resource('post', 'PostController');
