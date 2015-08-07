@@ -18,6 +18,7 @@
   <a href="/about">About Me</a>
   <hr>
   <br>
+  
   @yield('content')
 </body>
 
