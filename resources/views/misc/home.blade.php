@@ -2,6 +2,6 @@
 
 @section('content')
 
-I am the home page!!!
+  I am the home page!!!
 
 @stop

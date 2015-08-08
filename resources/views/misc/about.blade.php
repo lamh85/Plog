@@ -1,10 +1,7 @@
-<html>
+@extends('layouts.default')
 
-I am an about page!
+@section('content')
 
-ET phone home! (go back to home page:)
-<a href="/">Click here!</a>
+  I am an about page!
 
-
-
-</html>
+@stop
