@@ -16,6 +16,7 @@
   Menu: 
   <a href="/">Home</a> |
   <a href="/about">About Me</a>
+  <a href="/post/new">New Blog Post</a>
   <hr>
   <br>
   

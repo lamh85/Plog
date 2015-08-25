@@ -24,4 +24,6 @@ Route::get('/about', 'MiscController@about');
 
 // Other Routes
 
-Route::resource('post', 'PostController');
+Route::get('/post/new', 'PostsController@myfunction');
+
+Route::resource('post', 'PostsController');

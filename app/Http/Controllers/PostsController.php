@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
-class PostController extends Controller
+class PostsController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -17,6 +17,17 @@ class PostController extends Controller
     public function index()
     {
         //
+    }
+
+    /**
+     * @param  Request  $request
+     * @param  int  $id
+     * @return Response
+     */
+    public function myfunction()
+    {
+        // Log::info('This is some useful information.');
+        return view('posts.new');
     }
 
     /**
