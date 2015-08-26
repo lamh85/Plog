@@ -20,17 +20,6 @@ class PostsController extends Controller
     }
 
     /**
-     * @param  Request  $request
-     * @param  int  $id
-     * @return Response
-     */
-    public function myfunction()
-    {
-        // Log::info('This is some useful information.');
-        return view('posts.new');
-    }
-
-    /**
      * Show the form for creating a new resource.
      *
      * @return Response

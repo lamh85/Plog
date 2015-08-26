@@ -24,6 +24,25 @@ Route::get('/about', 'MiscController@about');
 
 // Other Routes
 
-Route::get('/post/new', 'PostsController@myfunction');
-
 Route::resource('post', 'PostsController');
+
+// Route::get('/post/new', 'PostsController@myfunction');
+
+/*
++----------+------------------+--------------+
+| Method   | URI              | Name         |
++----------+------------------+--------------+
+| GET|HEAD | /                |              |
+| GET|HEAD | about            |              |
+| GET|HEAD | post             | post.index   |
+| POST     | post             | post.store   |
+| GET|HEAD | post/create      | post.create  |
+| GET|HEAD | post/new         |              |
+| PUT      | post/{post}      | post.update  |
+| PATCH    | post/{post}      |              |
+| GET|HEAD | post/{post}      | post.show    |
+| DELETE   | post/{post}      | post.destroy |
+| GET|HEAD | post/{post}/edit | post.edit    |
++----------+------------------+--------------+
+
+*/
