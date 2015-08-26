@@ -27,6 +27,7 @@ class PostsController extends Controller
     public function create()
     {
         //
+        return view('posts.create');
     }
 
     /**
@@ -38,6 +39,10 @@ class PostsController extends Controller
     public function store(Request $request)
     {
         //
+        // $title = $request->input('title');
+        echo "hello world";
+        // return json_encode($request);
+        // render    
     }
 
     /**
