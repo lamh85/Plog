@@ -39,8 +39,9 @@ class PostsController extends Controller
     public function store(Request $request)
     {
         //
-        // $title = $request->input('title');
-        echo "hello world";
+        $post = new Post;
+        $title = $request->input('title');
+
         // return json_encode($request);
         // render    
     }
