@@ -44,9 +44,13 @@ class PostsController extends Controller
     {
         //
         $post = new Post;
-        $post->title = $request->input('title');
-        $post->body = $request->input('body');
-        $post->save();
+        // $post->title = $request->input('title');
+        // $post->body = $request->input('body');
+        // $post->save();
+        $post = App\PostModel::create([
+            'title' => $request->input('title'),
+            'body'  => $request->input('body')
+            ])
 
         // return json_encode($request);
         // render    
