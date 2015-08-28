@@ -43,14 +43,14 @@ class PostsController extends Controller
     public function store(Request $request)
     {
         //
-        $post = new Post;
+        $post = new PostModel;
         // $post->title = $request->input('title');
         // $post->body = $request->input('body');
         // $post->save();
-        $post = App\PostModel::create([
+        $post = PostModel::create([
             'title' => $request->input('title'),
             'body'  => $request->input('body')
-            ])
+            ]);
 
         // return json_encode($request);
         // render    
