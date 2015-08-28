@@ -44,7 +44,9 @@ class PostsController extends Controller
     {
         //
         $post = new Post;
-        $title = $request->input('title');
+        $post->title = $request->input('title');
+        $post->body = $request->input('body');
+        $post->save();
 
         // return json_encode($request);
         // render    
