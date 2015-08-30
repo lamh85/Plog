@@ -30,7 +30,6 @@ class PostsController extends Controller
      */
     public function create()
     {
-        //
         return view('posts.create');
     }
 
@@ -42,7 +41,6 @@ class PostsController extends Controller
      */
     public function store(Request $request)
     {
-        //
         $post = new PostModel;
         // $post->title = $request->input('title');
         // $post->body = $request->input('body');
@@ -76,7 +74,8 @@ class PostsController extends Controller
      */
     public function edit($id)
     {
-        //
+        $post = PostModel::find($id);
+        return view('posts.edit',['post' => $post]);
     }
 
     /**
