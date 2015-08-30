@@ -42,16 +42,12 @@ class PostsController extends Controller
     public function store(Request $request)
     {
         $post = new PostModel;
-        // $post->title = $request->input('title');
-        // $post->body = $request->input('body');
-        // $post->save();
         $post = PostModel::create([
             'title' => $request->input('title'),
             'body'  => $request->input('body')
             ]);
 
         // return json_encode($request);
-        // render    
     }
 
     /**
@@ -87,7 +83,12 @@ class PostsController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        DB::table('posts')
+            ->where('id', $id)
+            ->update([
+                'title' => $request->input('title'),
+                'body' => $request->input('body')
+            ]);
     }
 
     /**
