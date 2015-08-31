@@ -15,7 +15,7 @@
   <input name="title" value="{{$post->title}}">
 
   <label for="body">Body</label>
-  <input name="body" value="{{$post->body"}}>
+  <input name="body" value="{{$post->body}}">
 
   <button type="submit">Submit!</button>
 </form>

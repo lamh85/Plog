@@ -83,12 +83,13 @@ class PostsController extends Controller
      */
     public function update(Request $request, $id)
     {
-        DB::table('posts')
-            ->where('id', $id)
-            ->update([
-                'title' => $request->input('title'),
-                'body' => $request->input('body')
-            ]);
+        $post = PostModel::find($id);
+        $post->update([
+            'title' => $request->input('title'),
+            'body' => $request->input('body')
+        ]);
+
+        return view('posts.show',['post' => $post]);
     }
 
     /**
