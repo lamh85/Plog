@@ -47,7 +47,7 @@ class PostsController extends Controller
             'body'  => $request->input('body')
             ]);
 
-        // return json_encode($request);
+        return redirect('post/' . $post->id);
     }
 
     /**
@@ -89,7 +89,7 @@ class PostsController extends Controller
             'body' => $request->input('body')
         ]);
 
-        return view('posts.show',['post' => $post]);
+        return redirect('post/' . $id);
     }
 
     /**
@@ -100,6 +100,7 @@ class PostsController extends Controller
      */
     public function destroy($id)
     {
-        //
+        PostModel::find($id)->delete();
+        return redirect('post/');
     }
 }
