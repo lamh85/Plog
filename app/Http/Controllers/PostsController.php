@@ -10,6 +10,14 @@ use App\Http\Controllers\Controller;
 
 class PostsController extends Controller
 {
+    public function validateSharedFn()
+    {
+        $this->validate($request, [
+            'title' => 'required|unique:posts',
+            'body' => 'required'
+        ]);
+    }
+
     /**
      * Display a listing of the resource.
      *
@@ -46,6 +54,8 @@ class PostsController extends Controller
             'title' => $request->input('title'),
             'body'  => $request->input('body')
             ]);
+
+        $this->validateSharedFn();
 
         return redirect('post/' . $post->id);
     }
