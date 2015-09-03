@@ -11,4 +11,9 @@ class PostModel extends Model
 
   // In Rails, this is called "strong params"
   protected $fillable = ['title','body'];
+
+  public function comments()
+  {
+    return $this->hasMany('App\CommentModel');
+  }
 }
