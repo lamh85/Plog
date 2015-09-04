@@ -24,4 +24,9 @@
   <button type="submit">Submit!</button>
 </form>
 
+<h2>Add a comment</h2>
+
+<form action="/post/{{$post->id}}" method="POST">
+  <input type="hidden" name="_token" value="<?php echo csrf_token(); ?>">
+</form>
 @stop

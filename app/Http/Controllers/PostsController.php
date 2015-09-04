@@ -70,7 +70,7 @@ class PostsController extends Controller
     {
         $post = PostModel::find($id);
         $comments = $post->comments();
-        return view('posts.show',['post' => $post]);
+        return view('posts.show',['post' => $post, 'comments' => $comments]);
     }
 
     /**
