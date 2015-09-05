@@ -57,7 +57,7 @@ class PostsController extends Controller
 
         $this->validateSharedFn();
 
-        return redirect('post/' . $post->id);
+        return redirect('posts/' . $post->id);
     }
 
     /**
@@ -100,7 +100,7 @@ class PostsController extends Controller
             'body' => $request->input('body')
         ]);
 
-        return redirect('post/' . $id);
+        return redirect('posts/' . $id);
     }
 
     /**
@@ -112,6 +112,6 @@ class PostsController extends Controller
     public function destroy($id)
     {
         PostModel::find($id)->delete();
-        return redirect('post/');
+        return redirect('posts/');
     }
 }

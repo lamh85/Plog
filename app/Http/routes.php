@@ -16,33 +16,31 @@
 //     return view('welcome');
 // });
 
-// Routes to Misc Controller
-
 Route::get('/', 'MiscController@home');
 
 Route::get('/about', 'MiscController@about');
 
 // Other Routes
 
-Route::resource('post', 'PostsController');
+Route::resource('posts', 'PostsController');
 
-// Route::get('/post/new', 'PostsController@myfunction');
+Route::resource('comment', 'CommentsController');
 
 /*
 +----------+------------------+--------------+
 | Method   | URI              | Name         |
 +----------+------------------+--------------+
-| GET|HEAD | /                |              |
-| GET|HEAD | about            |              |
-| GET|HEAD | post             | post.index   |
-| POST     | post             | post.store   |
-| GET|HEAD | post/create      | post.create  |
-| GET|HEAD | post/new         |              |
-| PUT      | post/{post}      | post.update  |
-| PATCH    | post/{post}      |              |
-| GET|HEAD | post/{post}      | post.show    |
-| DELETE   | post/{post}      | post.destroy |
-| GET|HEAD | post/{post}/edit | post.edit    |
-+----------+------------------+--------------+
+| GET|HEAD | /                 |               |
+| GET|HEAD | about             |               |
+| GET|HEAD | posts             | posts.index   |
+| POST     | posts             | posts.store   |
+| GET|HEAD | posts/create      | posts.create  |
+| GET|HEAD | posts/new         |               |
+| PUT      | posts/{post}      | posts.update  |
+| PATCH    | posts/{post}      |               |
+| GET|HEAD | posts/{post}      | posts.show    |
+| DELETE   | posts/{post}      | posts.destroy |
+| GET|HEAD | posts/{post}/edit | posts.edit    |
++----------+-------------------+---------------+
 
 */
