@@ -24,12 +24,12 @@ Route::get('/about', 'MiscController@about');
 
 Route::resource('posts', 'PostsController');
 
-Route::resource('comment', 'CommentsController');
+Route::resource('comments', 'CommentsController');
 
 /*
-+----------+------------------+--------------+
-| Method   | URI              | Name         |
-+----------+------------------+--------------+
++----------+-------------------+---------------+
+| Method   | URI               | Name          |
++----------+-------------------+---------------+
 | GET|HEAD | /                 |               |
 | GET|HEAD | about             |               |
 | GET|HEAD | posts             | posts.index   |
@@ -42,5 +42,4 @@ Route::resource('comment', 'CommentsController');
 | DELETE   | posts/{post}      | posts.destroy |
 | GET|HEAD | posts/{post}/edit | posts.edit    |
 +----------+-------------------+---------------+
-
 */

@@ -4,7 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class PostModel extends Model
+class Post extends Model
 {
   // Specify the table name in the DB
   protected $table = 'posts';
@@ -14,6 +14,6 @@ class PostModel extends Model
 
   public function comments()
   {
-    return $this->hasMany('App\CommentModel');
+    return $this->hasMany('App\Comment');
   }
 }

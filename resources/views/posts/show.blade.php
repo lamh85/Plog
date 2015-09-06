@@ -2,12 +2,14 @@
 
 @section('content')
 
+<p>The variable type for $post is {{gettype($post)}}.
+
 <p>Created: {{ $post->created_at }}
 <br>Last modified: {{ $post->updated_at }}
 <br>Title: {{ $post->title }}
 <br>Body: {{ $post->body }}
 
-<form action="/post/{{$post->id}}" method="POST">
+<form action="/posts/{{$post->id}}" method="POST">
   <input type="hidden" name="_token" value="<?php echo csrf_token(); ?>">
   <input type="hidden" name="_method" value="PUT">
 
@@ -26,7 +28,8 @@
 
 <h2>Add a comment</h2>
 
-<form action="/post/{{$post->id}}" method="POST">
+<form action="/comments" method="POST">
   <input type="hidden" name="_token" value="<?php echo csrf_token(); ?>">
+  
 </form>
 @stop

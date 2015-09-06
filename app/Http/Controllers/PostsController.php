@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-use App\PostModel;
+use App\Post;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
@@ -25,7 +25,7 @@ class PostsController extends Controller
      */
     public function index()
     {
-        $posts = PostModel::all();
+        $posts = Post::all();
 
         // The rails equilvalent is: @posts = Post.all
         return view('posts.index',['posts' => $posts]);
@@ -49,8 +49,8 @@ class PostsController extends Controller
      */
     public function store(Request $request)
     {
-        $post = new PostModel;
-        $post = PostModel::create([
+        $post = new Post;
+        $post = Post::create([
             'title' => $request->input('title'),
             'body'  => $request->input('body')
             ]);
@@ -68,8 +68,8 @@ class PostsController extends Controller
      */
     public function show($id)
     {
-        $post = PostModel::find($id);
-        // $comments = $post->comments;
+        $post = Post::find($id);
+        $comments = $post->comments;
         return view('posts.show',['post' => $post]);
             // , 'comments' => $comments]);
     }
@@ -82,7 +82,7 @@ class PostsController extends Controller
      */
     public function edit($id)
     {
-        $post = PostModel::find($id);
+        $post = Post::find($id);
         return view('posts.edit',['post' => $post]);
     }
 
@@ -95,7 +95,7 @@ class PostsController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $post = PostModel::find($id);
+        $post = Post::find($id);
         $post->update([
             'title' => $request->input('title'),
             'body' => $request->input('body')
@@ -112,7 +112,7 @@ class PostsController extends Controller
      */
     public function destroy($id)
     {
-        PostModel::find($id)->delete();
+        Post::find($id)->delete();
         return redirect('posts/');
     }
 }
