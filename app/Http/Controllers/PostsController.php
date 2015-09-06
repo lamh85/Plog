@@ -10,13 +10,13 @@ use App\Http\Controllers\Controller;
 
 class PostsController extends Controller
 {
-    public function validateSharedFn()
-    {
-        $this->validate($request, [
-            'title' => 'required|unique:posts',
-            'body' => 'required'
-        ]);
-    }
+    // public function validateSharedFn()
+    // {
+    //     $this->validate($request, [
+    //         'title' => 'required|unique:posts',
+    //         'body' => 'required'
+    //     ]);
+    // }
 
     /**
      * Display a listing of the resource.
@@ -55,7 +55,7 @@ class PostsController extends Controller
             'body'  => $request->input('body')
             ]);
 
-        $this->validateSharedFn();
+        // $this->validateSharedFn();
 
         return redirect('posts/' . $post->id);
     }
@@ -69,8 +69,9 @@ class PostsController extends Controller
     public function show($id)
     {
         $post = PostModel::find($id);
-        $comments = $post->comments();
-        return view('posts.show',['post' => $post, 'comments' => $comments]);
+        // $comments = $post->comments;
+        return view('posts.show',['post' => $post]);
+            // , 'comments' => $comments]);
     }
 
     /**

@@ -16,8 +16,8 @@
   Menu: 
   <a href="/">Home</a> |
   <a href="/about">About Me</a> | 
-  <a href="/post/create">New Blog Post</a> |
-  <a href="/post">All Blog Posts</a>
+  <a href="{{URL::route('posts.create')}}">New Blog Post</a> |
+  <a href="{{URL::route('posts.index')}}">All Blog Posts</a>
   <hr>
   <br>
   
