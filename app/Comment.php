@@ -14,6 +14,6 @@ class Comment extends Model
 
   public function post()
   {
-    return $this->hasOne('App\Post');
+    return $this->belongsTo('App\Post');
   }
 }
