@@ -49,7 +49,6 @@ class PostsController extends Controller
      */
     public function store(Request $request)
     {
-        $post = new Post;
         $post = Post::create([
             'title' => $request->input('title'),
             'body'  => $request->input('body')
@@ -57,7 +56,7 @@ class PostsController extends Controller
 
         // $this->validateSharedFn();
 
-        return redirect('posts/' . $post->id);
+        return view('posts/' . $post->id);
     }
 
     /**
@@ -70,7 +69,7 @@ class PostsController extends Controller
     {
         $post = Post::find($id);
         $comments = $post->comments;
-        return view('posts.show',['post' => $post]);
+        return view('posts.show',['post' => $post, 'comments' => $comments]);
             // , 'comments' => $comments]);
     }
 
@@ -101,7 +100,7 @@ class PostsController extends Controller
             'body' => $request->input('body')
         ]);
 
-        return redirect('posts/' . $id);
+        return view('posts/' . $id);
     }
 
     /**
@@ -113,6 +112,6 @@ class PostsController extends Controller
     public function destroy($id)
     {
         Post::find($id)->delete();
-        return redirect('posts/');
+        return view('posts/');
     }
 }

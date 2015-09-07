@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
+use App\Comment;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 
@@ -20,16 +21,6 @@ class CommentsController extends Controller
     }
 
     /**
-     * Show the form for creating a new resource.
-     *
-     * @return Response
-     */
-    public function create()
-    {
-        //
-    }
-
-    /**
      * Store a newly created resource in storage.
      *
      * @param  Request  $request
@@ -37,7 +28,14 @@ class CommentsController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $comment = new Comment;
+        $comment = Comment::create([
+            'title'   => $request->input('title'),
+            'body'    => $request->input('body'),
+            'post_id' => $request->input('post_id')
+        ]);
+
+        return redirect('posts/' . $request->input('post_id'));
     }
 
     /**

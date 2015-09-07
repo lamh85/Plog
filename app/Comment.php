@@ -10,7 +10,7 @@ class Comment extends Model
   protected $table = 'comments';
 
   // In Rails, this is called "strong params"
-  protected $fillable = ['title','body'];
+  protected $fillable = ['title','body','post_id'];
 
   public function post()
   {

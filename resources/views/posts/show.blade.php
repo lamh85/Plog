@@ -30,6 +30,28 @@
 
 <form action="/comments" method="POST">
   <input type="hidden" name="_token" value="<?php echo csrf_token(); ?>">
+  <input type="hidden" name="post_id" value="{{$post->id}}">
+
+  <label for="title">Title (optional)</label>
+  <input name="title">
+
+  <p>
+  <label for "body">Comment</label>
+  <textarea name="body"></textarea>
   
+  <button type="submit">Submit!</button>
 </form>
+
+<h2>Comments</h2>
+
+  @forEach ($comments as $comment)
+
+    Posted at {{$comment->created_at}}:
+
+    <p>
+      {{$comment->body}}
+    </p>
+
+  @endForEach
+
 @stop
