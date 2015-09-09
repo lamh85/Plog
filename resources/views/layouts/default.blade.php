@@ -17,7 +17,8 @@
   <a href="/">Home</a> |
   <a href="/about">About Me</a> | 
   <a href="{{URL::route('posts.create')}}">New Blog Post</a> |
-  <a href="{{URL::route('posts.index')}}">All Blog Posts</a>
+  <a href="{{URL::route('posts.index')}}">All Blog Posts</a> |
+  <a href="/register">Register</a>
   <hr>
   <br>
   
