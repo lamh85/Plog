@@ -5,7 +5,7 @@
 <h1>Create a new blog post!</h1>
 
 <form action="{{URL::route('posts.store')}}" method="POST">
-  <input type="hidden" name="_token" value="<?php echo csrf_token(); ?>">
+  <input type="hidden" name="_token" value="{{csrf_token()}}">
 
   <label for="title">Title</label>
   <input name="title">
