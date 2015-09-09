@@ -17,7 +17,6 @@
 // });
 
 Route::get('/', 'MiscController@home');
-
 Route::get('/about', 'MiscController@about');
 
 Route::get('/register', 'UsersController@create');
@@ -33,8 +32,8 @@ Route::post('auth/register', 'Auth\AuthController@postRegister');
 
 // Other Routes
 
+Route::resource('users', 'UsersController');
 Route::resource('posts', 'PostsController');
-
 Route::resource('comments', 'CommentsController');
 
 /*
