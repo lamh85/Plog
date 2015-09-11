@@ -4,7 +4,7 @@
 
 <h1>Register a new account</h1>
 
-<form action="auth/register" method="POST">
+<form action="{{URL::route('users.store')}}" method="POST">
   <input type="hidden" name="_token" value="{{csrf_token()}}">
 
   <label for="first_name">
