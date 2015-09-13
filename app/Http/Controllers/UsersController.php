@@ -7,7 +7,8 @@ use Illuminate\Http\Request;
 use App\User;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
-use Symfony\Component\Console\Input;
+use Input;
+// use Symfony\Component\Console\Input;
 
 class UsersController extends Controller
 {
@@ -39,16 +40,16 @@ class UsersController extends Controller
      */
     public function store(Request $request)
     {
-        return "POST is: " . json_encode($_POST) .
-            "<p>Request is: " . json_encode($request) .
-            "<p>Input is: " . json_encode(Input::get());
+        // return "POST is: " . json_encode($_POST) .
+        //     "<p>Request is: " . json_encode($request) .
+        //     "<p>Input is: " . json_encode(Input::get());
         // return json_encode($request) . "hello world";
-        // User::create([
-        //     'first_name' => $_POST['first_name'],
-        //     'last_name' => $_POST['last_name'],
-        //     'email' => $_POST['email'],
-        //     'password' => bcrypt($_POST['password']),
-        // ]);
+        User::create([
+            'first_name' => Input::get('first_name'),
+            'last_name' => Input::get('last_name'),
+            'email' => Input::get('email'),
+            'password' => bcrypt(Input::get('password')),
+        ]);
     }
 
     /**
