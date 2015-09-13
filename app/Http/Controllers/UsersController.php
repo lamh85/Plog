@@ -40,16 +40,14 @@ class UsersController extends Controller
      */
     public function store(Request $request)
     {
-        // return "POST is: " . json_encode($_POST) .
-        //     "<p>Request is: " . json_encode($request) .
-        //     "<p>Input is: " . json_encode(Input::get());
-        // return json_encode($request) . "hello world";
         User::create([
             'first_name' => Input::get('first_name'),
             'last_name' => Input::get('last_name'),
             'email' => Input::get('email'),
             'password' => bcrypt(Input::get('password')),
         ]);
+        $userID = User::where('email', Input::get('email'))->id;
+        return redirect('users/' . $userID);
     }
 
     /**
@@ -60,7 +58,8 @@ class UsersController extends Controller
      */
     public function show($id)
     {
-        //
+        $user = User::find($id);
+        return view('users.show', [user => $user]);
     }
 
     /**
