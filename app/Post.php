@@ -16,4 +16,9 @@ class Post extends Model
   {
     return $this->hasMany('App\Comment');
   }
+
+  private $rules = array(
+    'title' => 'required|unique',
+    'body' => 'required'
+    )
 }
