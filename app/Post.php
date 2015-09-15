@@ -17,7 +17,8 @@ class Post extends Model
     return $this->hasMany('App\Comment');
   }
 
-  private $rules = array(
+  // In ruby, a "static method/variable" is called a "class variable/method"
+  public static $rules = array(
     'title' => 'required|unique',
     'body' => 'required'
     )
