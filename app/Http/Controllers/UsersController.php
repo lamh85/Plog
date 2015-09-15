@@ -40,14 +40,16 @@ class UsersController extends Controller
      */
     public function store(Request $request)
     {
-        User::create([
-            'first_name' => Input::get('first_name'),
-            'last_name' => Input::get('last_name'),
-            'email' => Input::get('email'),
-            'password' => bcrypt(Input::get('password')),
-        ]);
-        $userID = User::where('email', Input::get('email'))->id;
-        return redirect('users/' . $userID);
+        // User::create([
+        //     'first_name' => Input::get('first_name'),
+        //     'last_name' => Input::get('last_name'),
+        //     'email' => Input::get('email'),
+        //     'password' => bcrypt(Input::get('password')),
+        // ]);
+        // $userID = User::where('email', Input::get('email'))->id;
+        // return redirect('users/' . $userID);
+
+        return json_encode($request->input('first_name') ." ". $request->input('last_name'));
     }
 
     /**
