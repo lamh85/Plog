@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 
 use App\User;
 use App\Http\Requests;
+use App\Http\Requests\UserRequests;
 use App\Http\Controllers\Controller;
 use Input;
 // use Symfony\Component\Console\Input;
@@ -38,7 +39,7 @@ class UsersController extends Controller
      * @param  Request  $request
      * @return Response
      */
-    public function store(Request $request)
+    public function store(UserRequests $request)
     {
         // User::create([
         //     'first_name' => Input::get('first_name'),
