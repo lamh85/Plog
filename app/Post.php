@@ -21,5 +21,5 @@ class Post extends Model
   public static $rules = array(
     'title' => 'required|unique',
     'body' => 'required'
-    )
+    );
 }

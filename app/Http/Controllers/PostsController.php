@@ -29,6 +29,8 @@ class PostsController extends Controller
 
         // The rails equilvalent is: @posts = Post.all
         return view('posts.index',['posts' => $posts]);
+        // return view('posts.index', ['posts' => Post::all()]);        
+        // return view('posts/index')->with('posts',Post::all());
     }
 
     /**
