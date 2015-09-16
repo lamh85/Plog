@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 
 use App\User;
 use App\Http\Requests;
-use App\Http\Requests\UserRequests;
+use App\Http\Requests\UsersRequest;
 use App\Http\Controllers\Controller;
 use Input;
 // use Symfony\Component\Console\Input;
@@ -39,7 +39,7 @@ class UsersController extends Controller
      * @param  Request  $request
      * @return Response
      */
-    public function store(UserRequests $request)
+    public function store(UsersRequest $request)
     {
         // User::create([
         //     'first_name' => Input::get('first_name'),
@@ -50,7 +50,7 @@ class UsersController extends Controller
         // $userID = User::where('email', Input::get('email'))->id;
         // return redirect('users/' . $userID);
 
-        return json_encode($request->input('first_name') ." ". $request->input('last_name'));
+        return "Success!!! " . json_encode($request->input('first_name') ." ". $request->input('last_name'));
     }
 
     /**
