@@ -9,6 +9,11 @@
   <!-- BOOTSTRAP JS -->
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
   
+  <title>
+    @yield('title')
+  </title>
+
+  @yield('head_extra')
 </head>
 
 <body>
