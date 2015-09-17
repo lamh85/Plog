@@ -10,6 +10,8 @@
             @endforeach
         </ul>
     </div>
+    Here is the error object disected:
+    <p>{{ $errors->first('title') }}
 @endif
 
 <h1>Create a new blog post!</h1>
