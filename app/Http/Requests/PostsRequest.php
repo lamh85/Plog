@@ -24,8 +24,16 @@ class PostsRequest extends Request
     public function rules()
     {
         return [
-            'title' => 'required|unique',
+            'title' => 'required|unique:posts',
             'body' => 'required'
+        ];
+    }
+
+    public function messages()
+    {
+        return [
+            'required' => 'The :attribute field is required.',
+            'unique' => 'There is already another blog post with the same title.'
         ];
     }
 }

@@ -5,7 +5,6 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 
 use App\Post;
-use App\Http\Requests;
 use App\Http\Requests\PostsRequest;
 use App\Http\Controllers\Controller;
 
@@ -95,7 +94,7 @@ class PostsController extends Controller
      * @param  int  $id
      * @return Response
      */
-    public function update(Request $request, $id)
+    public function update(PostsRequest $request, $id)
     {
         $post = Post::find($id);
         $post->update([
