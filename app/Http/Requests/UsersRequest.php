@@ -28,4 +28,14 @@ class UsersRequest extends Request
             'password' => 'required|alpha_num|confirmed|min:6'
         ];
     }
+
+    public function messages()
+    {
+        return [
+            'required' => 'The :attribute field is required.',
+            'password.alpha_num' => 'Your password must only contain letters and numbers.',
+            'password.confirmed' => 'Your password confirmation does not match your password.',
+            'password.min:6' => 'Your password must have at least 6 characters.'
+        ];
+    }
 }
