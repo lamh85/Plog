@@ -33,7 +33,7 @@ class PostsRequest extends Request
     {
         return [
             'required' => 'The :attribute field is required.',
-            'unique' => 'There is already another blog post with the same title.'
+            'title.unique' => 'There is already another blog post with the same title.'
         ];
     }
 }
