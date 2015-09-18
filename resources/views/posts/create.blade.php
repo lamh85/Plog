@@ -21,6 +21,7 @@
   <input name="title">
 
   @if ( count($errors->first('body')) > 0)
+    <p>
     {{ $errors->first('body') }}
     <p>
   @endIf
