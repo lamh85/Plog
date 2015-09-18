@@ -24,7 +24,7 @@ class UsersRequest extends Request
     public function rules()
     {
         return [
-            'email' => 'required',
+            'email' => 'required|unique:users',
             'password' => 'required|alpha_num|confirmed|min:6'
         ];
     }
@@ -33,6 +33,7 @@ class UsersRequest extends Request
     {
         return [
             'required' => 'The :attribute field is required.',
+            'email.unique' => 'We already have a user account that uses this email address.',
             'password.alpha_num' => 'Your password must only contain letters and numbers.',
             'password.confirmed' => 'Your password confirmation does not match your password.',
             'password.min:6' => 'Your password must have at least 6 characters.'
