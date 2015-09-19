@@ -24,7 +24,14 @@ class CommentsRequest extends Request
     public function rules()
     {
         return [
-            //
+            'body' => 'required'
+        ];
+    }
+
+    public function messages()
+    {
+        return [
+            'body.required' => 'Your comment is blank.'
         ];
     }
 }
