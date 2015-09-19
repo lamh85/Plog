@@ -9,16 +9,30 @@
 <br>Title: {{ $post->title }}
 <br>Body: {{ $post->body }}
 
+@if (count($errors) > 0)
+    <div class="alert alert-danger">
+        We cannot save your post. Please see errors below.
+    </div>
+@endif
+
 <form action="/posts/{{$post->id}}" method="POST">
   <input type="hidden" name="_token" value="{{csrf_token()}}">
   <input type="hidden" name="_method" value="PUT">
 
   <p>
+  @if ( count($errors->first('title')) > 0)
+    {{ $errors->first('title') }}
+    <p>
+  @endIf
   <label for="title">Title</label>
   <br>
   <input name="title" value="{{$post->title}}">
 
   <p>
+  @if ( count($errors->first('body')) > 0)
+    {{ $errors->first('body') }}
+    <p>
+  @endIf  
   <label for="body">Body</label>
   <br>
   <textarea name="body">{{$post->body}}</textarea>
@@ -36,6 +50,10 @@
   <input name="title">
 
   <p>
+  @if ( count($errors->first('body')) > 0)
+    {{ $errors->first('body') }}
+    <p>
+  @endIf
   <label for "body">Comment</label>
   <textarea name="body"></textarea>
   
