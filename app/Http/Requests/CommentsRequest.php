@@ -34,4 +34,6 @@ class CommentsRequest extends Request
             'body.required' => 'Your comment is blank.'
         ];
     }
+
+    protected $errorBag = 'comments';
 }

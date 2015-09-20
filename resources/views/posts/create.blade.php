@@ -34,18 +34,20 @@
 @stop
 
 <!-- 
+The $errors object:
 Illuminate\Support\ViewErrorBag Object ( 
-  [bags:protected] =>   Array (
-                        [default] => Illuminate\Support\MessageBag  Object (
-                                                                    [messages:protected] => Array (
-                                                                                            [title] =>  Array (
-                                                                                                        [0] => The title field is required.
+    [bags:protected] => Array (
+        [default] => Illuminate\Support\MessageBag  Object (
+            [messages:protected] => Array (
+                [title] =>  Array (
+                    [0] => The title field is required.
+                )
+                [body] => Array ( 
+                    [0] => The body field is required.
+                )
+            )
+            [format:protected] => :message
         )
-        [body] => Array ( 
-          [0] => The body field is required.
-        )
-      )
-    [format:protected] => :message
-  )
-) )
+    )
+)
 -->
