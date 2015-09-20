@@ -49,12 +49,10 @@
 
   <p>
   @if ( $errors->comments->has('body') )
-    <!-- <div class="alert alert-danger"> -->
-      <!-- We cannot save your comment: -->
-      {{ print_r($errors->comments) }}
-    <!-- </div> -->
-    hello
-    <p>
+    <div class="alert alert-danger">
+      We cannot save your comment:
+      <p>{{ $errors->comments->first('body') }}
+    </div>
   @endIf
   <!--
     The print_r of $errors->comments:

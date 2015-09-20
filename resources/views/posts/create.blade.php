@@ -14,7 +14,12 @@
   <input type="hidden" name="_token" value="{{csrf_token()}}">
 
   @if ( count($errors->first('title')) > 0)
-    {{ $errors->first('title') }}
+    <p>
+      {{ $errors->first('title') }} 
+    <!-- 
+    print_r of $errors:
+    Illuminate\Support\ViewErrorBag Object ( [bags:protected] => Array ( [default] => Illuminate\Support\MessageBag Object ( [messages:protected] => Array ( [title] => Array ( [0] => The title field is required. ) [body] => Array ( [0] => The body field is required. ) ) [format:protected] => :message ) ) ) 1
+    -->
     <p>
   @endIf
   <label for="title">Title</label>
