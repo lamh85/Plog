@@ -2,8 +2,6 @@
 
 @section('content')
 
-<p>The variable type for $post is {{gettype($post)}}.
-
 <p>Created: {{ $post->created_at }}
 <br>Last modified: {{ $post->updated_at }}
 <br>Title: {{ $post->title }}
@@ -51,9 +49,17 @@
 
   <p>
   @if ( $errors->comments->has('body') )
-    {{ $errors->comments->body }}
+    <!-- <div class="alert alert-danger"> -->
+      <!-- We cannot save your comment: -->
+      {{ print_r($errors->comments) }}
+    <!-- </div> -->
+    hello
     <p>
   @endIf
+  <!--
+    The print_r of $errors->comments:
+    Illuminate\Support\MessageBag Object ( [messages:protected] => Array ( [body] => Array ( [0] => Your comment is blank. ) ) [format:protected] => :message )
+  -->
   <label for "body">Comment</label>
   <textarea name="body"></textarea>
   

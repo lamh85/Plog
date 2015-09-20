@@ -36,5 +36,5 @@ class CommentsRequest extends Request
     }
 
     // Help the view access only comments' error messages
-    protected $errorBag = 'comments';
+    public $errorBag = 'comments';
 }
