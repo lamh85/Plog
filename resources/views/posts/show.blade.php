@@ -50,8 +50,8 @@
   <input name="title">
 
   <p>
-  @if ( count($errors->first('body')) > 0)
-    {{ $errors->first('body') }}
+  @if ( $errors->comments->has('body') )
+    {{ $errors->comments->body }}
     <p>
   @endIf
   <label for "body">Comment</label>
