@@ -36,4 +36,7 @@ class PostsRequest extends Request
             'title.unique' => 'There is already another blog post with the same title.'
         ];
     }
+
+    // Help the view access only posts' error messages
+    public $errorBag = 'posts';
 }

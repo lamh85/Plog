@@ -18,8 +18,8 @@
   <input type="hidden" name="_method" value="PUT">
 
   <p>
-  @if ( count($errors->first('title')) > 0)
-    {{ $errors->first('title') }}
+  @if ( $errors->posts->has('title') )
+    {{ $errors->posts->first('title') }}
     <p>
   @endIf
   <label for="title">Title</label>
@@ -27,8 +27,8 @@
   <input name="title" value="{{$post->title}}">
 
   <p>
-  @if ( count($errors->first('body')) > 0)
-    {{ $errors->first('body') }}
+  @if ( $errors->posts->has('body') )
+    {{ $errors->posts->first('body') }}
     <p>
   @endIf  
   <label for="body">Body</label>
