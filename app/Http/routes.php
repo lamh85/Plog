@@ -22,6 +22,7 @@ Route::get('/about', 'MiscController@about');
 Route::get('/register', 'UsersController@create');
 
 // Authentication routes...
+// See this file for methods: AuthenticatesUsers.php
 Route::get('auth/login', 'Auth\AuthController@getLogin');
 Route::post('auth/login', 'Auth\AuthController@postLogin');
 Route::get('auth/logout', 'Auth\AuthController@getLogout');
