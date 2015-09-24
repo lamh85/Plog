@@ -25,6 +25,9 @@
   <a href="{{URL::route('posts.index')}}">All Blog Posts</a> |
   <a href="{{URL::route('users.create')}}">Register</a> |
   <a href="auth/login">Login</a>
+  @if (Auth::check())
+    <br>You currently signed in!
+  @endIf
   <hr>
   <br>
   
